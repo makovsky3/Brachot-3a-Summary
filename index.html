@@ -1,0 +1,248 @@
+Copy<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brachot 3a: Continuing the Discussion on Evening Shema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #2c3e50;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: calc(50% - 40px);
+        }
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #f1f1f1;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #f1f1f1;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #f1f1f1;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #f1f1f1 transparent transparent;
+        }
+        .right::after {
+            left: -16px;
+        }
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #FF9F55;
+            margin-top: 0;
+        }
+        .verse-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .verse-button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .verse-content {
+            display: none;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+        .hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            direction: rtl;
+        }
+        .point-verse {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .left::after, .right::after {
+                left: 15px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Brachot 3a: Continuing the Discussion on Evening Shema</h1>
+    
+    <div class="verse-container">
+        <button class="verse-button" onclick="toggleVerse('mainVerse')">Show/Hide Main Verse</button>
+        <div id="mainVerse" class="verse-content">
+            <p class="hebrew">מאימתי קורין את שמע בערבין</p>
+            <p><em>Translation: From what time may one recite the Shema in the evening?</em></p>
+        </div>
+    </div>
+
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h2>The Main Question</h2>
+                <p>The Mishnah asks: From what time can we recite the evening Shema?</p>
+                <button class="verse-button" onclick="toggleVerse('verse1')">Show/Hide Verse</button>
+                <div id="verse1" class="point-verse">
+                    <p class="hebrew">משעה שהכהנים נכנסים לאכול בתרומתן</p>
+                    <p><em>Translation: From the time when the priests enter to eat their terumah.</em></p>
+                </div>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>First Opinion</h2>
+                <p>From the time when the priests enter to eat their terumah (special food for priests).</p>
+                <button class="verse-button" onclick="toggleVerse('verse2')">Show/Hide Verse</button>
+                <div id="verse2" class="point-verse">
+                    <p class="hebrew">עד סוף האשמורה הראשונה</p>
+                    <p><em>Translation: Until the end of the first watch.</em></p>
+                </div>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>Rabban Gamliel's Opinion</h2>
+                <p>Until midnight.</p>
+                <button class="verse-button" onclick="toggleVerse('verse3')">Show/Hide Verse</button>
+                <div id="verse3" class="point-verse">
+                    <p class="hebrew">עד שיעלה עמוד השחר</p>
+                    <p><em>Translation: Until the break of dawn.</em></p>
+                </div>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>The Sages' Opinion</h2>
+                <p>Until dawn.</p>
+                <button class="verse-button" onclick="toggleVerse('verse4')">Show/Hide Verse</button>
+                <div id="verse4" class="point-verse">
+                    <p class="hebrew">חצות לילה אקום להודות לך</p>
+                    <p><em>Translation: At midnight I arise to give thanks unto Thee. (Psalms 119:62)</em></p>
+                </div>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>Proof from King David</h2>
+                <p>The Gemara brings a proof from Psalms where David says he wakes up at midnight to praise God.</p>
+                <button class="verse-button" onclick="toggleVerse('verse5')">Show/Hide Verse</button>
+                <div id="verse5" class="point-verse">
+                    <p class="hebrew">שלש משמרות הוי הלילה</p>
+                    <p><em>Translation: The night consists of three watches.</em></p>
+                </div>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>Discussion: Night Watches</h2>
+                <p>The rabbis discuss how the night is divided into watches and what happens during each watch.</p>
+                <button class="verse-button" onclick="toggleVerse('verse6')">Show/Hide Verse</button>
+                <div id="verse6" class="point-verse">
+                    <p class="hebrew">שואג כארי ואומר אוי לבנים</p>
+                    <p><em>Translation: [God] roars like a lion and says: "Woe to the children."</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleVerse(id) {
+            var verseContent = document.getElementById(id);
+            if (verseContent.style.display === "none" || verseContent.style.display === "") {
+                verseContent.style.display = "block";
+            } else {
+                verseContent.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
